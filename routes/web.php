@@ -41,9 +41,7 @@ Route::get('user/{id}/profile', function ($id) {
     //
 })->name('profile');
 
-Route::fallback(function () {
-    return "ERROR: Could you please try again your url.";
-});
+
 
 Route::get('demo2', function() {
     return view('demo2');
@@ -56,3 +54,14 @@ Route::get('long', function () {
 })->middleware(CheckAge::class);
 
 
+//............Demo Demo...........//
+
+Route::resource('/products', 'ProductController');
+
+Route::get('home', function () {
+    return view('home');
+});
+
+Route::get('call-view', function(){
+    return view('master1');
+ });
